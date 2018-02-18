@@ -2,26 +2,98 @@
 <html>
 
 <head>
-  <title>Isaiah's Webpage</title>
+  <title>Isaiah’s Webpage</title>
   <meta charset="utf-8" />
+  <style type="text/css">
+    .main {
+      background: rgb(255,255,255);
+      color: black;
+      font-family: Didot, times-new-roman, serif;
+      margin-left: 20px;
+      margin-top: 20px;
+    }
+
+    #class-info {
+      font-size: 12px;
+      color: grey;
+      margin-left: 20px;
+      width: 590px; 
+    }
+
+    #title {
+      font-size: 170px;
+      line-height: 135px;
+      margin: 20px 10px 0px 10px;
+      border-top: dotted 3px black;
+      border-bottom: dotted 3px black;
+      padding-top: 20px;
+      padding-bottom: 32px;
+      width: 590px; 
+    }
+
+    #content {
+      width: 400px;
+      margin-top: 20px;
+      margin-left: 10px;
+    }
+
+    #content > div:hover {
+      color:red;
+         -moz-transition: all .2s;
+      -webkit-transition: all .2s;
+              transition: all .2s;
+    }
+
+    #exercises {
+      float: left;
+    }
+    #exercises > h3 {
+      font-size: 30px;
+      line-height: 0px;
+    }
+
+    #projects {
+      float: left;
+      margin-left: 20px;
+    }
+    #projects > h3 {
+      font-size: 30px;
+      line-height: 0px;
+    }
+
+    li > a {
+      font-size: 20px;
+    }
+
+    li > a:hover { text-decoration: underline; }
+    a:active { text-decoration: underline; }
+    a:visited { text-decoration: none; color: black; }
+    a:link { text-decoration: none; color: black; }
+
+  </style>
 </head>
 
 <body>
   <div class="main">
-    <h1>Isaiah's website.</h1>  
-    <div id="exercises">
-      <h3>Exercises</h3>
-      <a href="presenation2.html" target="blank">presentation</a> 
-      <br/>
-      <a href="#" target="blank">taxonomy</a>
+    <p id="class-info">Graphic Design for the Web | 2018 | Federico Pérez Villoro | Isaiah Gernhardt | igernhar@risd.edu</p>
+    <h1 id="title">isaiah’s <br><span style="padding-left: 7px">website</span></h1> 
+    <div id="content">
+      <div id="exercises">
+        <h3>exercises</h3>
+        <ul>
+          <li><a href="presentation/index.html" target="blank">presentation</a></li> 
+          <li><a href="taxonomy/index.html" target="blank">taxonomy</a></li>
+        </ul>
 
-
-    </div>
-    
-    <div id="projects">
-      <h3>Projects</h3>
-      <a href="#" target="blank">project 1</a><br>
-    </div>
+      </div>
+      
+      <div id="projects">
+        <h3>projects</h3>
+        <ul>
+          <li><a href="project_1/index.html" target="blank">project 1</a></li>
+        </ul>
+      </div>
+    </div> 
   </div>
 </body>
 </html>
