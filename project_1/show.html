@@ -73,10 +73,10 @@
       z-index: 4;
     }
 
-    a:hover { text-decoration: underline; }
+/*    a:hover { text-decoration: underline; }
     a:active { text-decoration: underline; }
     a:visited { text-decoration: none; color: black; }
-    a:link { text-decoration: none; color: black; }
+    a:link { text-decoration: none; color: black; }*/
 
   </style>
 </head>
@@ -110,8 +110,10 @@
 
       $('a').click( function(e) {
         e.preventDefault();
-          alert("Why did I search that? " + hash + " Who am I? ---- Random questions will swirl about on the page when a question is clicked, all of them responding to the input. Actual search results will be hidden in the mess.");
+          // alert("Why did I search that? " + hash + " Who am I? ---- Random questions will swirl about on the page when a question is clicked, all of them responding to the input. Actual search results will be hidden in the mess.");
           document.getElementById("result").style.fontSize = "20px"
+          document.getElementById("result").style.transition = "0s"
+          document.getElementById("result").innerHTML = "Why did I search that? " + hash + " Who am I? ---- Random questions will swirl about on the page when a question is clicked, all of them responding to the input. Actual search results will be hidden in the mess.";
           return false; 
         } 
       );
