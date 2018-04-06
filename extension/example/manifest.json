@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+
+  "name": "Example Extension",
+  "version": "0.1.0",
+  "description": "Uses Jquery for many visual effects",
+
+	"browser_action": {
+    	"default_icon": "icon.png"
+  	},
+
+  "content_scripts": [{
+    "css": ["style.css"],
+    "js": ["jquery-3.1.0.min.js","content.js"],
+    "matches": ["http://*/*","https://*/*"] //place your URL matches here https://developer.chrome.com/extensions/match_patterns
+  }]
+
+}
