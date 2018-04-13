@@ -1,9 +1,12 @@
 {
   "manifest_version": 2,
 
-  "name": "Example Extension",
+  "name": "Anti-MarkUp",
   "version": "0.1.0",
-  "description": "Uses Jquery for many visual effects",
+  "description": "Uses jquery to show the pages raw html.",
+  "permissions": [
+        "storage"
+    ],
 
 	"browser_action": {
     	"default_icon": "icon.png"

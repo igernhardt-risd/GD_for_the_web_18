@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head><title>Options</title>
+	<style type="text/css">
+		#body_sw {
+		}
+		#options_sw {
+			position:relative;
+			z-index: 5000;
+			text-align: center;
+			width: 400px;
+			margin: auto;
+		}
+		.options_sw {
+			background-color: #4285f4;
+			color: white;
+			border: 1px solid black;
+			border-radius: 2px;
+			font-size: 16px;
+			padding: 6px;
+			width:150px;
+		}
+		button:focus {outline:0;}
+	</style>
+</head>
+<body>
+	<div id="body_sw">
+	<div id="options_sw">
+		<button id="reset_sw" class="options_sw">Clear Cache</button>
+		<button id="view_sw" class="options_sw">Veiw Cache</button>
+	</div>
+	<p id="cache_sw"></p>
+	</div>
+
+	<script src="options.js"></script>
+</body>
+</html>
