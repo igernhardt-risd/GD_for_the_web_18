@@ -1,4 +1,4 @@
-// var markup = document.documentElement.innerHTML;
+var markup = document.documentElement.outerHTML;
 // // replace images when the page loads
 // $('img').attr('src', 'https://i.imgur.com/8QMMdNv.jpg');
 
@@ -19,6 +19,7 @@
 // });
 
 //$('body').html(markup);
+
 var e = document.body;
     e.parentNode.removeChild(e);
     document.body = document.createElement("body");
