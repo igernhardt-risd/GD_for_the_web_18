@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "Smeared Web",
+  "version": "0.1.4",
+  "description": "View your browsing history by having all your visited webpages mix together into one Franken-Site.",
+  "permissions": [
+      "storage",
+      "notifications"
+  ],
+  "options_page": "options.html",
+
+	"browser_action": {
+    	"default_icon": "icon.png",
+      "default_title": "Google Mail",
+      "default_popup": "options.html"
+  	},
+
+  "content_scripts": [{
+    "css": ["style.css"],
+    "js": ["jquery-3.1.0.min.js","content.js"],
+    "matches": ["http://*/*","https://*/*"] //place your URL matches here https://developer.chrome.com/extensions/match_patterns
+  }]
+
+}
