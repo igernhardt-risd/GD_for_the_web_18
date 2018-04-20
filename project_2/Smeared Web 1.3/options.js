@@ -40,14 +40,21 @@ function viewCache() {
 		}
 		document.getElementById('cache_sw').innerHTML = initial.toString();
 		document.getElementById('cache_sw').className = "cache_sw";
+
+		document.getElementById('view_sw').className = "options_active_sw";
+		document.getElementById('info_sw').className = "options_sw";
 	});
 };
 
 function infoCache() {
 	chrome.storage.local.get(['Testing'], function(result) {
 		document.getElementById('cache_sw').innerHTML = 
-		"There are " + result.Testing.length + " cached webpages.";
+		"<p>There are <strong>" + result.Testing.length + "</strong> cached webpages.</p><br><button id='reset_sw' class='sub_options_sw'>Clear Cache</button>";
 		document.getElementById('cache_sw').className = "info_sw";
+		document.getElementById('reset_sw').addEventListener('click',removeCache);
+
+		document.getElementById('view_sw').className = "options_sw";
+		document.getElementById('info_sw').className = "options_active_sw";
 	});
 };
 
@@ -59,6 +66,5 @@ function loadedDOM() {
 };
 
 document.addEventListener('DOMContentLoaded', loadedDOM);
-document.getElementById('reset_sw').addEventListener('click',removeCache);
 document.getElementById('view_sw').addEventListener('click',viewCache);
 document.getElementById('info_sw').addEventListener('click',infoCache);
