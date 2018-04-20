@@ -1,10 +1,10 @@
 var markup = document.documentElement.outerHTML;
-
-chrome.storage.local.get(['Testing'], function(result) {
-	console.log(result.Testing);
-});
-
 var newTesting = 1;
+
+// Debug Function
+// chrome.storage.local.get(['Testing'], function(result) {
+// 	console.log(result.Testing);
+// });
 
 chrome.storage.local.get(['Testing'], function(result) {
 	if (result.Testing == undefined) {

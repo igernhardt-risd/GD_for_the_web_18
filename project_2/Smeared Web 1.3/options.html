@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head><title>Options</title>
+	<style type="text/css">
+		body {
+			margin: 0px;
+			padding: 0px;
+		}
+		#body_sw {
+		}
+		#optionsContainer_sw {
+			position:relative;
+			z-index: 5000;
+			text-align: center;
+			width: 400px;
+			margin: auto;
+			top:24px;
+			margin-bottom: 500px;
+		}
+		.options_sw {
+			background-color: rgb(66,133,244);
+			color: white;
+			border: 1px solid black;
+			border-radius: 0px;
+			font-size: 16px;
+			padding: 6px;
+			width:150px;
+			cursor: pointer;
+		}
+		.options_sw:hover {
+			background-color: rgb(50,120,224);
+		}
+		.options_sw:focus {
+			outline:0;
+			background-color: rgb(50,100,204);
+		}
+	</style>
+</head>
+<body>
+	<div id="body_sw">
+	<div id="optionsContainer_sw">
+		<button id="reset_sw" class="options_sw">Clear Cache</button>
+		<button id="view_sw" class="options_sw">Veiw Cache</button>
+	</div>
+	<p id="cache_sw"></p>
+	</div>
+
+	<script src="options.js"></script>
+</body>
+</html>

@@ -7,12 +7,12 @@ function removeCache() {
 function viewCache() {
 	chrome.storage.local.get(['Testing'], function(result) {
 		document.getElementById('cache_sw').innerHTML = result.Testing.toString();
-		console.log(result.Testing.toString());
+		console.log(result.Testing.length);
 	});
 };
 
 function loadedDOM() {
-	
+	 
 };
 
 document.addEventListener('DOMContentLoaded', loadedDOM);
