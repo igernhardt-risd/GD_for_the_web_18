@@ -39,8 +39,15 @@ function viewCache() {
 			initial = splice(initial, shuffled[i + 1]);
 		}
 		document.getElementById('cache_sw').innerHTML = initial.toString();
-		document.getElementById('cache_sw').style.width = "1200px"
-		document.getElementById('cache_sw').style.height = "800px"
+		document.getElementById('cache_sw').className = "cache_sw";
+	});
+};
+
+function infoCache() {
+	chrome.storage.local.get(['Testing'], function(result) {
+		document.getElementById('cache_sw').innerHTML = 
+		"There are " + result.Testing.length + " cached webpages.";
+		document.getElementById('cache_sw').className = "info_sw";
 	});
 };
 
@@ -54,3 +61,4 @@ function loadedDOM() {
 document.addEventListener('DOMContentLoaded', loadedDOM);
 document.getElementById('reset_sw').addEventListener('click',removeCache);
 document.getElementById('view_sw').addEventListener('click',viewCache);
+document.getElementById('info_sw').addEventListener('click',infoCache);

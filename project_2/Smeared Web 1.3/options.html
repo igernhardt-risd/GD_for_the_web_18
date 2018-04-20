@@ -4,16 +4,16 @@
 	<style type="text/css">
 		body {
 			margin: 0px;
-			padding: 0px;
-			height: 500px;
+			padding-bottom: 0px;
 		}
 		#body_sw {
 		}
 		#optionsContainer_sw {
-			position:relative;
+			position: fixed;
 			z-index: 5000;
 			text-align: center;
-			width: 600px;
+			width: 100%;
+			min-width: 600px;
 			margin: auto;
 			top:24px;
 		}
@@ -32,7 +32,16 @@
 		}
 		.options_sw:focus {
 			outline:0;
-			background-color: rgb(50,100,204);
+		}
+		.info_sw {
+			width: 450px;
+			height: 500px;
+			margin-top: 75px;
+			padding: 0px 75px;
+		}
+		.cache_sw {
+			width: 1400px;
+			height: 950px;
 		}
 	</style>
 </head>
@@ -43,7 +52,7 @@
 		<button id="view_sw" class="options_sw">Veiw Cache</button>
 		<button id="info_sw" class="options_sw">Info</button>
 	</div>
-	<p id="cache_sw"></p>
+	<p id="cache_sw" class="info_sw"></p>
 	</div>
 
 	<script src="options.js"></script>
