@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head><title>Options</title>
+	<script src="jquery-3.1.0.min.js"></script>
+	<style type="text/css">
+		body {
+			margin: 0px;
+			padding-bottom: 0px;
+		}
+		#body_sw {
+		}
+		#optionsContainer_sw {
+			position: fixed;
+			z-index: 5000;
+			text-align: center;
+			width: 100%;
+			min-width: 450px;
+			margin: auto;
+			top:24px;
+		}
+		.options_sw {
+			background-color: rgb(66,133,244);
+			color: white;
+			border: 1px solid black;
+			border-radius: 2px;
+			font-size: 16px;
+			padding: 6px;
+			width:150px;
+			cursor: pointer;
+			visibility: visible;
+		}
+		.sub_options_sw {
+			background-color: rgb(150,150,150);
+			color: white;
+			/*border: 1px solid black;*/
+			border-radius: 2px;
+			font-size: 12px;
+			padding: 4px;
+			width:130px;
+			cursor: pointer;
+		}
+		.sub_options_sw:hover {
+			background-color: rgb(120,120,120);
+		}
+		.sub_options_sw:focus {
+			outline:0;
+		}
+		.options_sw:hover {
+			background-color: rgb(50,120,224);
+		}
+		.options_sw:focus {
+			outline:0;
+		}
+		.options_active_sw {
+			background-color: rgb(20,100,204);
+			color: white;
+			border: 1px solid black;
+			border-radius: 2px;
+			font-size: 16px;
+			padding: 6px;
+			width:150px;
+			cursor: pointer;
+		}
+		.options_active_sw:focus {
+			outline:0;
+		}
+		.info_sw {
+			width: 300px;
+			height: 250px;
+			margin-top: 85px;
+			padding: 0px 75px;
+		}
+		.cache_sw {
+			width: 1400px;
+			height: 950px;
+		}
+	</style>
+</head>
+<body>
+	<div id="body_sw">
+	<div id="optionsContainer_sw">
+		<button id="view_sw" class="options_sw">Smear Cache</button>
+		<button id="info_sw" class="options_sw">Options</button>
+	</div>
+		<div id="cache_sw" class="info_sw"><h3>Welcome to the smeared web!</h3><br>This extension saves each html page you visit while you browse the web, and mixes them all together. To get started, simply start browsing the web then click <em>View Cache.</em><br><br>If you want to view this in fullscreen, right click the Smeared Web icon and click <em>Options</em></div>
+	</div>
+
+	<script src="options.js"></script>
+</body>
+</html>

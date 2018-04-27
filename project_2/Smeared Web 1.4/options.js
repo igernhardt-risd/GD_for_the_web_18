@@ -71,6 +71,7 @@ function removeSelectedCache() {
 	chrome.storage.local.get(['Testing'], function(result) {
 		var boxes = $('.checkbox:checked');
 		var checkedBoxes = [];  
+		
 		for (var i=0; i < boxes.length; i++) {
 			var temp = $('.checkbox:checked')[i];
 			temp = temp.getAttribute('id');
@@ -78,6 +79,7 @@ function removeSelectedCache() {
 		}
 		console.log(checkedBoxes);
 		resultIndex = result.Testing;
+
 		for (var i = checkedBoxes.length -1; i >= 0; i--) {
 		   resultIndex.splice(checkedBoxes[i],1);
 		};
