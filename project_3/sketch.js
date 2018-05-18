@@ -5,7 +5,7 @@ var mainDuckingSize = 0.5;
 var main_MinMaxFreq = [150, 400];
 var mod_AmpFreq = [0.6, 8];
 
-var noiseAmp = 0.007;
+var noiseAmp = 0.01;
 var noiseDucking = 15;
 
 var score = 0;
