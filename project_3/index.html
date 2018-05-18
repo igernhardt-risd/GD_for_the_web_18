@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>lockpick</title>
+  <script src="libraries/p5.js" type="text/javascript"></script>
+
+  <script src="libraries/p5.dom.js" type="text/javascript"></script>
+  <script src="libraries/p5.sound.js" type="text/javascript"></script>
+
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      background-color: rgb(10, 10, 10);
+      color: white;
+    }
+    
+    canvas {
+      vertical-align: top;
+    }
+    
+    #canvasContainer {
+      position: fixed;
+      top: -200px;
+      transition: top 2s 1s;
+      width:80%;
+      left:10%;
+    }
+    
+    
+    #contentContainer {
+      pointer-events: none;
+    }
+    #dottedLines {
+      position: fixed;
+      top: -100vh;
+      width: 80%;
+      height: 100%;
+      margin: 0px 10%;
+      transition: top 1s 0.6s;
+    }
+    
+    .dottedLine {
+      height: 10%;
+      width: 100%;
+      //border-top: 2px dotted white;
+      margin-top: 10vh;
+      box-sizing:border-box;
+      
+      background-image: linear-gradient(to right, white 33%, rgba(255,255,255,0) 0%);
+      background-position: top;
+      background-size: 6px 2px;
+      background-repeat: repeat-x;
+    }
+    #textContainer {
+      position: fixed;
+      top: 40px;
+      width: 80%;
+      height: 100%;
+      margin: 0px 10%;
+      text-align:center;
+      transition: top 1s 0.6s;
+    }
+    .textLine {
+      height: 10%;
+      width: 100%;
+      margin-bottom: 10vh;
+      box-sizing:border-box;
+      font-family: ariel, sans-serif;
+      font-size:22px;
+      text-align:center;
+      line-height:26px;
+    }
+    @media only screen and (max-width: 1000px) {
+        .textLine {
+            font-size: 2.2vw;
+            line-height: 2.6vw;
+        }
+    }
+    #line1 {visibility:hidden; opacity:0; transition: opacity 2s 1s;}
+    #line2 {visibility:hidden; opacity:0; transition: opacity 2s 1s;}
+    #line3 {visibility:hidden; opacity:0; transition: opacity 2s 1s;}
+    #line4 {visibility:hidden; opacity:0; transition: opacity 2s 1s;}
+    #line5 {visibility:hidden; opacity:0; transition: opacity 2s 1s;
+      width: 200px;
+      height: 50px;
+      background-color: transparent;
+      border: 2px solid white;
+      color: white;
+      border-radius: 2px;
+      padding:auto auto;
+    }
+    #line5:focus {
+      outline: none;
+    }
+    #line5:hover {
+      color: grey;
+      cursor: pointer;
+    }
+    
+    a:visited {text-decoration:none;}
+    a:active {text-decoration:none;}
+    a:hover {text-decoration:none; color:grey;}
+    a {text-decoration:underline; color:white;}
+    
+    #startContainer {
+      position:fixed;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      background-color: rgba(0,0,0,0.5);
+      transition: top 2s 0s;
+      text-align: center;
+      box-shadow: 0px -50px 50px rgba(0,0,0,0.3);
+    }
+    #startText {
+      font-family: ariel, sans-serif;
+      font-size: 26px;
+      font-weight:200;
+      margin-top:23vh;
+      line-height: 34px;
+    }
+    #instructions {
+      font-family: ariel, sans-serif;
+      font-size: 18px;
+      font-weight:200;
+      margin-top:100px;
+    }
+    #startButton {
+      background-color: rgb(255,255,255);
+      color: black;
+      width:70px;
+      height:70px;
+      border-radius: 100%;
+      font-size:30px;
+      text-align: center;
+      padding-left: 12px;
+      margin-top:100px;
+      border: 0px;
+      transition: color 0.2s;
+      transition: background-color 0.2s;
+    }
+    #startButton:hover {
+      color:white;
+      background-color:rgb(50,50,50);
+      cursor: pointer;
+    }
+    #startButton:focus {
+      outline: none;
+    }
+    
+    #unlockContainer {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      transition: top 1.3s 1s;
+      box-shadow: 0px -50px 50px rgba(0,0,0,0.8);
+      background-color: rgb(30,30,30);
+    }
+    
+    #getMoreInfo {
+      text-align: center;
+    }
+    
+    h2 {
+      font-family: ariel, sans-serif;
+      font-size: 26px;
+      font-weight:200;
+      margin-top:23vh;
+      line-height: 34px;
+      width:700px;
+      text-align: center;
+      margin: 35vh auto;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div id="getMoreInfo">
+    <h2><strong>Get 2FA for these common accounts:</strong><br>
+    <a href="" target="blank">Google</a> | 
+    <a href="" target="blank">Facebook</a> | 
+    <a href="" target="blank">Apple</a><br><br><br>
+    <strong>Find out what websites support 2FA <a href="https://twofactorauth.org/" target="blank">here</a></strong></h2>
+  </div>
+  <div id="unlockContainer">
+    <div id="textContainer">
+      <p class="textLine" id="line1">73% of accounts have duplicate passwords <br>and 54% of people use 5 or less passwords across their entire online life.</p>
+      <p class="textLine" id="line2">Two-Step Authentication (2SA) and Two-Factor Authentication (2FA) are different, <br>2FA is more secure and requres a physical item to authenticate.</p>
+      <p class="textLine" id="line3"><a href="https://www.slideshare.net/cheapsslsecurity/vip-strong-authentication-no-passwords-infographic-by-symantec" target="blank">According to Symantec</a> 80% of security breeches <br>could have been prevented with 2FA.</p>
+      <p class="textLine" id="line4">In banking stronger customer authentication has just become law <br>and 2FA has become a minimum requirement.</p>
+      <button class="textLine" id="line5" onclick="unlock()">Unlock</button>
+    </div>
+    <div id="canvasContainer">
+    </div>
+    <div id="contentContainer">
+      <div id='dottedLines'>
+        <div class="dottedLine"></div>
+        <div class="dottedLine"></div>
+        <div class="dottedLine"></div>
+        <div class="dottedLine"></div>
+        <div class="dottedLine"></div>
+      </div>
+    </div>
+  </div>
+  <div id="startContainer">
+    <p id="startText">Passwords are much like pins in a lock.<br>If you have only one password guarding your accounts,<br>that's like having a lock with only one pin.<br><br><strong>Multi-Factor Authentication is the next step towards securing your accounts,<br>increasing the number of pins that are needed to bypass security.</strong></p>
+    <p id="instructions">Bypass each pin by moving the mouse until you reach the target frequency.</p>
+    <button onclick="startLockpick()" id="startButton">&#9658;</button>
+  </div>
+</body>
+<script src="sketch.js" type="text/javascript"></script>
+
+</html>
