@@ -1,6 +1,6 @@
 var context, canvas, carrier, modulator, fft, carFreq = 10, targetPos, transitionTimer = [1, 120, 60], scoreStarted = false, endTimer = 120, startedLockpick = false;
 
-var targetPosMultiplier = [0.2, 0.6, 0.8, 0.4, 0.1];
+var targetPosMultiplier = [0.2, 0.6, 0.75, 0.4, 0.1];
 var mainDuckingSize = 0.5;
 var main_MinMaxFreq = [150, 400];
 var mod_AmpFreq = [0.6, 8];
