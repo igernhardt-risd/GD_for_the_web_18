@@ -242,6 +242,7 @@ function startLockpick() {
 function unlock() {
   endTimer = 0;
   document.getElementById('canvasContainer').style.top = "150vh";
+  document.getElementById('dottedLines').style.transition = "top 1.5s 0s";
   document.getElementById('dottedLines').style.top = "150vh";
   document.getElementById('textContainer').style.top = "150vh";
   document.getElementById('unlockContainer').style.top = "150vh";
