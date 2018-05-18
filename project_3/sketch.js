@@ -98,12 +98,13 @@ function draw() {
     } else if (transitionTimer[2] > 0 && !unlocked[4]) {
       scoreStarted = true;
       transitionTimer[2]--;
-      modulator.amp(map(transitionTimer[2], 0, transitionTimerBase[2], mod_AmpFreq[0], 0))
+      modulator.amp(map(transitionTimer[2], 0, transitionTimerBase[2], mod_AmpFreq[0] * Math.max(0, map(abs(mouseX - targetPos), 0, width * mainDuckingSize, mod_AmpFreq[0], 0)), 0))
       noise.amp(map(transitionTimer[2], 0, transitionTimerBase[2], noiseAmp, 0), 0.01);
 
     } else if (!unlocked[4]) {
       var modAmp = Math.max(0, map(abs(mouseX - targetPos), 0, width * mainDuckingSize, mod_AmpFreq[0], 0));
       modulator.amp(modAmp, 0.01);
+      
     } else if (unlocked[4] && endTimer > 0) {
       endTimer--
     }
