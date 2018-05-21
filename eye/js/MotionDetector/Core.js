@@ -143,7 +143,7 @@ function Map(n, start1, stop1, start2, stop2) {
       document.getElementById('movement').style.left = leftX + 'px';
 
       document.getElementById('movementSmoothing').style.left = leftX + 'px';
-      document.getElementById('pupil').style.left = Map(elementPositionInverted, 0, window.innerWidth, -window.innerWidth/3, window.innerWidth/3) + 'px';
+      document.getElementById('pupil').style.left = Map(elementPositionInverted, 0, window.innerWidth, 0, window.innerWidth - (window.innerHeight * 0.75)) + 'px';
       document.getElementById('pupil').style.marginTop = Map(Math.abs(Map(elementPositionInverted, 0, window.innerWidth, -window.innerHeight/3, window.innerHeight/3)), 0, window.innerHeight,window.innerHeight/2, 0) + 'px';
       
       delayArray.push(change);
