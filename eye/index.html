@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Webcam motion detection</title>
+		<link rel="stylesheet" type="text/css" href="styles/main.css" media="all">
+	</head>
+	<body onresize="windowResized()">
+		<video id="webCamWindow" autoplay="true"></video>
+		<div id="movement"></div>
+		<div id="movementSmoothing"></div>
+		<div id="pupil"><img src="images/pupil.png" style="width:100%; height:100%;"></div>
+		<img src="images/background.png" id="background">
+		<div id="eyeContainer"></div>
+		
+		<script type="text/javascript" src="js/global.js"></script>
+		<script type="text/javascript" src="js/MotionDetector/WebCamCapture.js"></script>
+		<script type="text/javascript" src="js/MotionDetector/ImageCompare.js"></script>
+		<script type="text/javascript" src="js/MotionDetector/Core.js"></script>
+		<script type="text/javascript" src="js/MotionDetector/Eyes.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
